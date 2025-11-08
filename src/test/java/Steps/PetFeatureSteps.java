@@ -18,12 +18,19 @@ import java.util.Map;
 public class PetFeatureSteps {
     PageBoard pb = new PageBoard();
 
+    //Objetos Product Id Page para cada tipo de mascota
     FishProductIdPage fishProductIdPage = new FishProductIdPage();
     DogsProductIdPage dogsProductIdP = new DogsProductIdPage();
     ReptilesProductIdPage reptilesProductIdP = new ReptilesProductIdPage();
     CatsProductIdPage catsProductIdP = new CatsProductIdPage();
     BirdsProductIdPage birdsProductIdP = new BirdsProductIdPage();
+
+    //Objetos Item Id Page para cada tipo de mascota
     FishItemIdPage fishItemIdPage = new FishItemIdPage();
+    DogsItemIdPage dogsItemIdPage = new DogsItemIdPage();
+    ReptilesItemIdPage reptilesItemIdPage = new ReptilesItemIdPage();
+    CatsItemIdPage catsItemIdPage = new CatsItemIdPage();
+    BirdsItemIdPage birdsItemIdPage = new BirdsItemIdPage();
 
     private PricePetManager priceManager;
     private PetNavigationItemIdManager itemIdManager;
@@ -56,7 +63,20 @@ public class PetFeatureSteps {
                 priceManager = new DogsItemIdPage();
                 itemIdManager = new DogsItemIdPage();
                 break;
-            // Agrega más categorías
+            case "Reptiles":
+                priceManager = new ReptilesItemIdPage();
+                itemIdManager = new ReptilesItemIdPage();
+                break;
+            case "Cats":
+                priceManager = new CatsItemIdPage();
+                itemIdManager = new CatsItemIdPage();
+                break;
+            case "Birds":
+                priceManager = new BirdsItemIdPage();
+                itemIdManager = new BirdsItemIdPage();
+                break;
+            default:
+                break;
         }
     }
 

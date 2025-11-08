@@ -2,7 +2,7 @@ Feature: PetSelect
 
   Background:
     Given Access page "https://petstore.octoperf.com/actions/Catalog.action"
-
+    And El catalogo esta completamente cargado
 
   Scenario: Acceso a la página de Peces
     Given Validate that there is a superior menu for "Fish"
@@ -14,10 +14,7 @@ Feature: PetSelect
     When Click on superior menu "Dogs"
     Then Validate page "viewCategory=&categoryId=DOGS"
 
-  Scenario: Acceso a la página de Perross
-    Given Validate that there is a superior menu for "Dogss"
-
-  Scenario: Acceso a la página de Reptiles
+   Scenario: Acceso a la página de Reptiles
     Given Validate that there is a superior menu for "Reptiles"
     When Click on superior menu "Reptiles"
     Then Validate page "viewCategory=&categoryId=REPTILES"
