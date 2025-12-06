@@ -1,7 +1,7 @@
 Feature: PetSelect
 
   Background:
-    Given Access page "https://petstore.octoperf.com/actions/Catalog.action"
+    Given Access to the page "https://petstore.octoperf.com/actions/Catalog.action"
     And El catalogo esta completamente cargado
 
   Scenario: Acceso a la página de Peces

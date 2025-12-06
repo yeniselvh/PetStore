@@ -17,6 +17,7 @@ public class ShoppingCartPage extends Configurations {
     private By cartTotal = By.xpath("//td[contains(text(),'Sub Total: $')]");
     private By emptyCartMessage = By.xpath("//b[normalize-space()='Your cart is empty.']");
     private By itemLocator = By.xpath("//td[contains(text(),'" + productIDLocator + "')]");
+    private By checkOutButton = By.xpath("//*[@id=\"Cart\"]/a");
 
     // Validar que un producto específico está en el carrito
     public void validateProductInCart(String productID) {
@@ -68,7 +69,7 @@ public class ShoppingCartPage extends Configurations {
         String priceText = parts[1].split(" ")[0]; // "35.00"
 
         double actualTotal = Double.parseDouble(priceText);
-       // Assert.assertEquals(actualTotal, sumaEsperada);
+        // Assert.assertEquals(actualTotal, sumaEsperada);
 
     }
 
@@ -109,5 +110,13 @@ public class ShoppingCartPage extends Configurations {
             throw new AssertionError("ERROR: El producto con Item ID '" + productIDLocator + "' aun esta presente en el carrito.");
         }
 
+    }
+
+    public boolean validateButtonNotVisible(String button) {
+        if (isElementPresent(checkOutButton))
+
+            throw new AssertionError("Error: El botón si está en el carrito.");
+        else
+            return true;
     }
 }

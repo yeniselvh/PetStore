@@ -129,4 +129,10 @@ public class ShoppingCartFeatureSteps {
     public void validarQueNoSeEliminoElProductoDelCarrito(String prodId) {
         Assert.assertFalse(shoppCart.validateProductNotInCart(prodId));
     }
+
+    @And("Validar que boton {string} no está visible")
+    public void validarQueBotonNoEstaVisible(String button) {
+        Assert.assertFalse(shoppCart.validateButtonNotVisible(button));
+    }
 }
+
